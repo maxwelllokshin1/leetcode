@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int[] anagramS = new int[26];
+        int[] anagramT = new int[26];
+
+        if(s.length() != t.length())
+        {
+            return false;
+        }
+        for(int i = 0; i<s.length(); i++)
+        {   
+            anagramS[s.charAt(i) - 'a'] += 1;
+            anagramT[t.charAt(i) - 'a'] += 1;
+        }
+
+        for(int i = 0; i<26; i++)
+        {
+            if(anagramS[i] != anagramT[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
