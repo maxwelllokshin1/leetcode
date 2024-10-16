@@ -1,0 +1,27 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        int a = 0, b = s.length() - 1;
+
+        while(a != s.length() && b != 0)
+        {
+            if((s.charAt(a) < 'a' || s.charAt(a) > 'z') && (s.charAt(a) < '0' || s.charAt(a) > '9'))
+            {
+                a++;
+            }else if((s.charAt(b) < 'a' || s.charAt(b) > 'z') && (s.charAt(b) < '0' || s.charAt(b) > '9'))
+            {
+                b--;
+            }else
+            {
+                if(s.charAt(a) != s.charAt(b))
+                {
+                    return false;
+                } 
+                a++;
+                b--;
+            }
+        }
+
+        return true;
+    }
+}
