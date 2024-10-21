@@ -1,0 +1,28 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int min = 0, max = nums.length-1, mid;
+        if(nums[min] == target)
+        {
+            return min;
+        }else if(nums[max] == target)
+        {
+            return max;
+        }
+        while(max != min+1 && max != min)
+        {
+            mid = (max+min)/2;
+            if(nums[mid] == target)
+            {
+                return mid;
+            }else if(nums[mid] < target)
+            {
+                min = mid;
+            }else if(nums[mid] > target)
+            {
+                max = mid;
+            }
+        }
+
+        return -1;
+    }
+}
