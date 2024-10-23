@@ -1,0 +1,42 @@
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int minCol = 0; 
+        int maxCol = matrix[minCol].length-1;
+        int minRow = 0;
+        int maxRow = matrix.length-1;
+
+        while(minCol <= maxCol && minRow <= maxRow)
+        {
+            int midRow = (maxRow+minRow)/2;
+            if(target >= matrix[midRow][minCol] && 
+            target <= matrix[midRow][maxCol])
+            {
+                int midCol = (maxCol + minCol)/2;
+                if(matrix[midRow][midCol] == target)
+                {
+                    return true;
+                }else if(matrix[midRow][midCol] < target)
+                {
+                    minCol = midCol+1;
+                }
+                else if(matrix[midRow][midCol] > target)
+                {
+                    maxCol = midCol-1;
+                }
+            }else if(target < matrix[midRow][minCol])
+            {
+                maxRow = midRow-1;
+                
+            }else if(target > matrix[midRow][maxCol])
+            {
+                if(maxRow == minRow)
+                {
+                    return false;
+                }
+                minRow = midRow+1;
+            }
+        }
+
+        return false;
+    }
+}
