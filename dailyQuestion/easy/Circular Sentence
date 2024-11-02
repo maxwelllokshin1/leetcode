@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isCircularSentence(String sentence) {
+        char first = sentence.charAt(0);
+        char last = sentence.charAt(sentence.length()-1);
+        if(first != last)
+        {   
+            return false;
+        }
+        for(int i = 0; i<sentence.length(); i++)
+        {
+            if(sentence.charAt(i) == 32)
+            {
+                last = sentence.charAt(i-1);
+                first = sentence.charAt(i+1);
+                System.out.println("first = " + first + "   last = " + last);
+                if(first != last)
+                {
+                    return false;
+                } 
+            }
+        }
+
+        return true;
+    }
+}
