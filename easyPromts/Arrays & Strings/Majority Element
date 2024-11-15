@@ -1,0 +1,28 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+
+        for(int n : nums)
+        {
+            if(map.getOrDefault(n,0) == 0)
+            {
+                nums[count] = n;
+                count++;
+            }
+            map.put(n, map.getOrDefault(n,0) + 1);
+        }
+        int maxVal = -1;
+        int maxCount = -1;
+        for(int i =0; i<count; i++)
+        {
+            if(map.get(nums[i]) > maxCount)
+            {
+                maxCount = map.get(nums[i]);
+                maxVal = nums[i];
+            }
+        }
+
+        return maxVal;
+    }
+}
