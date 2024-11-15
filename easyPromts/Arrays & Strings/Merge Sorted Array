@@ -1,0 +1,104 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        // given two arrays
+        // merge both arrays
+        // m represents how many elements in nums1
+        // n represents how many elements in nums2
+        // final array should be stored in nums1
+        // length of m+n
+        // m is the number of elements that must be merged
+        // the last elements are elements n changing values 0 to nums2
+
+
+        /*
+
+            Check first and last
+
+            if first of nums2 >= last of nums1, populate nums1 with nums2
+            if first of nums1 > last of nums2, shift all and populate nums1 with nums2
+        
+        */
+
+        int firstM = 0, firstN = 0;
+        int lastM = m-1, lastN = n-1;
+        if(m == 0 && n == 0) {return; } // if nothing in both lists
+        else if(n == 0) {return; }      // if nothing in nums2 
+        else if(m == 0 && n != 0){ nums1 = populate(nums1, nums2, firstM, firstN); return;} // if nothing in nums1 
+
+
+        if(nums2[firstN] >= nums1[lastM]){ nums1 = populate(nums1, nums2, m, firstN); return;} // if first value of num2 is >= to last value of nums1
+        else if(nums1[firstM] > nums2[lastN])   // if first value of nums1 is > last value of nums2
+        {
+            for(int i = 0; i<m; i++){ nums1 = pushBack(nums1, lastM, i); lastM++; }
+            
+            nums1 = populate(nums1, nums2, firstM, firstN);
+            return;
+        }
+
+
+        /*
+            Binary search operation
+            nums1 = [1,2,3,0,0,0]   m = 3
+            nums2 = [2,5,6]         n = 3
+
+            [1,2,3,4,5,6,7,0,0,0]   check if    [[5],5,6]   nums1[midM] > nums2[firstN]
+                   ^
+        */
+
+            for(int i =0; i<m; i++)
+            {
+                if(nums1[i] >= nums2[firstN])
+                {
+                        nums1 = pushBack(nums1, lastM, i);
+                        nums1[i] = nums2[firstN];
+                        lastM++;
+                        m++;
+                        n--;
+                        firstN++;
+                        if(n == 0 || m == nums1.length || (firstN-1 == lastN))
+                        {
+                            break;
+                        }
+                }
+            }
+            if(n != 0 && m != nums1.length && (firstN-1 != lastN))
+            {
+                nums1 = populate(nums1, nums2, m, firstN);
+            }
+
+    }
+
+    public int[] pushBack(int[] nums1,int m, int mIndex)
+    {
+
+        // temp = a
+        // a = b
+        // b = temp
+        if(m == mIndex){ 
+            int temp = nums1[mIndex];
+            nums1[mIndex] = nums1[m+1];
+            nums1[m+1] = temp; 
+        }else
+        {
+            for(int i = m; i>=mIndex; i--)
+            {
+                int temp = nums1[i];
+                nums1[i] = nums1[i+1];
+                nums1[i+1] = temp;
+            }
+        }
+        return nums1;
+    }
+
+    public int[] populate(int[] nums1, int[] nums2, int startM, int startN)
+    {
+        for(int i =startN; i<nums2.length; i++)
+        {
+            nums1[startM] = nums2[i];
+            startM++;
+            
+        }
+        return nums1;
+    }
+}
