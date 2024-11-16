@@ -1,0 +1,7 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+        String[] sWOSpaces = s.split(" ");
+
+        return sWOSpaces[sWOSpaces.length-1].length();
+    }
+}
