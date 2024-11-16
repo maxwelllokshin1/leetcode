@@ -1,0 +1,23 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        // Maximize profit 
+        // buy on one day and sell in future day
+        //return maximum profit and 0 otherwise
+
+        int minVal = prices[0];
+        int maxSub = 0;
+        
+        for(int i = 0; i<prices.length; i++)
+        {
+            if(prices[i] < minVal)
+            {
+                minVal = prices[i];
+            }else
+            {
+                maxSub = Math.max(maxSub, prices[i] - minVal);
+            }
+        }
+
+        return maxSub;
+    }
+}
