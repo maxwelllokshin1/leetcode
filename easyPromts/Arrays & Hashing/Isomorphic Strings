@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        // create hashmap
+        // set s characters to t characters
+        // go through string t to check if similar characters
+        if(s.length() != t.length()) { return false; }
+        if(s.equals(t)) { return true; }
+        Map<Character, Character> mapS = new HashMap<>();
+        Map<Character, Character> mapT = new HashMap<>();
+
+        for(int i = 0; i<s.length(); i++)
+        {
+            mapS.put(s.charAt(i), t.charAt(i));
+            mapT.put(t.charAt(i), s.charAt(i));
+        }   
+
+        for(int i =0; i<s.length(); i++)
+        {
+            if(mapS.get(s.charAt(i)) != t.charAt(i))
+            {
+                return false;
+            }
+
+            if(mapT.get(t.charAt(i)) != s.charAt(i))
+            {
+                return false;
+            }
+            
+        }
+        return true;
+    }
+}
