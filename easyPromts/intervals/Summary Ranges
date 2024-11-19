@@ -1,0 +1,41 @@
+class Solution {
+    public List<String> summaryRanges(int[] nums) {
+        List<String> res = new ArrayList<>();
+        if(nums.length == 0) {return new ArrayList<>();}
+
+        int increment = nums[0];    // 0
+        int[] interval = new int[2];
+        interval[0] = increment;    // 0
+        interval[1] = increment; 
+        for(int i =0; i<nums.length; i++)
+        {
+            if(nums[i] != increment)    // no   yes yes yes
+            {
+                increment = nums[i];    // 2    6   8
+                if(interval[0] == interval[1])  // yes  no  yes
+                {
+                    res.add(interval[0] + "");  // ["0"]        ["0","2->4","6"]
+                }else
+                {
+                    res.add(interval[0] + "->" + interval[1]);  // ["0", ["2->4"]]
+                }
+                interval[0] = nums[i];  // [2,]         [6,]    [8,]
+                interval[1] = nums[i];  // [2,2]        [6,6]   [8,8]
+            }else                       // yes yes yes
+            {
+                interval[1] = nums[i];  //[0,0] [2,3] [2,4]
+            }
+            increment += 1;             // 1 3 4 5 7    9
+        }
+
+        if(interval[0] == interval[1])  // yes  no  yes
+        {
+            res.add(interval[0] + "");  // ["0"]        ["0","2->4","6"]
+        }else
+            {
+            res.add(interval[0] + "->" + interval[1]);  // ["0", ["2->4"]]
+        }
+
+        return res;
+    }
+}
