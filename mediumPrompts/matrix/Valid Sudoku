@@ -1,0 +1,79 @@
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        // check if 3x3 is clear
+        // check if row is clear
+        // check if coloumn is clear
+
+        return check3x3s(board) && checkRow(board) && checkCol(board);
+    }
+
+    public boolean checkCol(char[][] board)
+    {
+        Set<Character> setCol = new HashSet<>();
+        for(int row = 0; row<=8; row++)
+        {
+            for(int col = 0; col<=8; col++)
+            {
+                if(Character.isDigit(board[col][row]) && setCol.contains(board[col][row]))
+                {
+                    return false;
+                }
+                setCol.add(board[col][row]);
+            }
+
+            setCol.clear();
+        }
+        return true;
+    }
+
+
+    public boolean checkRow(char[][] board)
+    {
+        Set<Character> setRow = new HashSet<>();
+        for(int row = 0; row<=8; row++)
+        {
+            for(int col = 0; col<=8; col++)
+            {
+                if(Character.isDigit(board[row][col]) && setRow.contains(board[row][col]))
+                {
+                    return false;
+                }
+                setRow.add(board[row][col]);
+            }
+
+            setRow.clear();
+        }
+        return true;
+    }
+
+    public boolean check3x3s(char[][] board)
+    {
+        // [0,0] [2,2]      [0,3] [2,5]     [0,6] [2,8]
+        // [3,0] [5,2]      [3,3] [5,5]     [3,6] [5,8]
+        // [6,0] [8,2]      [6,3] [8,5]     [6,6] [8,8]
+        Set<Character> set = new HashSet<>();
+        int row = 0, col = 0;
+        while(row <= 8)
+        {
+            while(col <= 8)
+            {
+                for(int r = row; r<row+3; r++)
+                {
+                    for(int c = col; c<col+3; c++)
+                    {
+                        if(Character.isDigit(board[r][c]) && set.contains(board[r][c]))
+                        {
+                            return false;
+                        }
+                        set.add(board[r][c]);
+                    }
+                }
+                set.clear();
+                col +=3;
+            }
+            col = 0;
+            row += 3;
+        }
+        return true;
+    }
+}
