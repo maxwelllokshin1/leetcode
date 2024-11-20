@@ -1,0 +1,29 @@
+class Solution {
+    public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<>();
+        int total = squareAll(n);
+        while(!set.contains(total))
+        {
+            set.add(total);
+            if(total == 1)
+            {
+                return true;
+            }
+            total = squareAll(total);
+        }
+
+        return false;
+    }
+
+    public int squareAll(int n) 
+    {
+        int total = 0;
+        while(n > 0)
+        {
+            int val = n%10;
+            total += (val * val);
+            n/=10;
+        }
+        return total;
+    }
+}
