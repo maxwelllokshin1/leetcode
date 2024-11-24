@@ -1,0 +1,69 @@
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // hold the min row hold the max row
+        // hold the min col hold the max col
+
+
+        // CHECKING BY ROW
+        // if target < matrix[midRow][minCol]
+        //      change maxRow 
+
+        // if target > matrix[midRow][maxCol]
+        //      change minRow
+
+        // if target >= matrix[midRow][minCol] && target <= matrix[midRow][maxCol]
+        //      check by col
+
+        
+        // CHECKING BY COL
+        // if target < matrix[midRow][midCol]
+        //      change minCol
+        
+        // if target > matrix[midRow][midCol]
+        //      change maxCol
+
+        // if target == matrix[midRow][midCol]
+        //      return true
+
+
+        // keep going while the max >= min for row and col
+
+        int minRow = 0, minCol = 0;
+        int maxRow = matrix.length-1;
+        int maxCol = matrix[maxRow].length-1;
+
+        while(maxRow >= minRow && maxCol >= minCol)
+        {
+            //System.out.println(minRow + " " + maxRow + " " + minCol + " " + maxCol);
+            int midRow = (minRow + maxRow)/2;
+            //System.out.println("midRow " + midRow);
+            if(target >= matrix[midRow][minCol] && target <= matrix[midRow][maxCol])
+            {
+                int midCol = (minCol + maxCol)/2;
+                //System.out.println("matrix[" + midRow + "," + midCol+ "]: " + matrix[midRow][midCol]);
+                if(target == matrix[midRow][midCol] || target == matrix[midRow][minCol] || target == matrix[midRow][maxCol])
+                {
+                    return true;
+                }
+                else if(target > matrix[midRow][midCol])
+                {
+                    minCol = midCol+1;
+                }
+                else if(target < matrix[midRow][midCol])
+                {
+                    maxCol = midCol-1;
+                }
+            }
+            else if(target < matrix[midRow][minCol])
+            {
+                maxRow = midRow -1;
+            }
+            else if(target > matrix[midRow][maxCol])
+            {
+                minRow = midRow +1;
+            }
+        }
+
+        return false;
+    }
+}
