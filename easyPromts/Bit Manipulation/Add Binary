@@ -1,0 +1,25 @@
+class Solution {
+    public String addBinary(String a, String b) {
+        if(a.length() == 0) {return b;}
+        if(b.length() == 0) {return a;}
+
+        StringBuilder res = new StringBuilder();
+
+        int i = a.length()-1;
+        int j = b.length()-1;
+
+        int carry = 0;
+        while(i >= 0 || j >= 0 || carry != 0)
+        {
+
+            int topBit = (i >= 0) ? a.charAt(i--) - '0' : 0;
+            int bottomBit = (j >= 0) ? b.charAt(j--) - '0' : 0;
+  
+            res.append((topBit + bottomBit + carry) % 2);
+
+            carry = (topBit + bottomBit + carry) / 2;
+        }
+
+        return res.reverse().toString();
+    }
+}
