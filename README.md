@@ -2,7 +2,7 @@
 - Solved in **JAVA** and will be posted here
 - Separated in respective categories
 
-# EASY PROMPTS: https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts
+# EASY PROMPTS
 **ARRAYS & HASHING -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Hashing
 
 **ARRAYS & STRINGS -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Strings
@@ -23,7 +23,7 @@
 
 **TREES -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/trees
 
-# MEDIUM PROMPTS: https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts
+# MEDIUM PROMPTS
 **MATH -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Math
 
 **TWO POINTERS -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Two%20Pointers
