@@ -1,41 +1,45 @@
 # All leetcode problems 
 - Solved in **JAVA** and will be posted here
 - Separated in respective categories
+- Devloping interview skills through leetcode
+- **GOAL:** Work on 5 leetcode problems a day and post about it on linkedin
 
 # EASY PROMPTS
-**ARRAYS & HASHING -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Hashing
 
-**ARRAYS & STRINGS -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Strings
+ [**ARRAYS & HASHING**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Hashing)
 
-**BIT MANIPULATION -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Bit%20Manipulation
+[**ARRAYS & STRINGS**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Arrays%20%26%20Strings)
 
-**MATH -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Math
+[**BIT MANIPULATION**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Bit%20Manipulation)
 
-**TWO POINTERS -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Two%20Pointers
+[**MATH**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Math)
 
-**BINARY SEARCH -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/binarySearch
+[**TWO POINTERS**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/Two%20Pointers)
 
-**INTERVALS -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/intervals
+[**BINARY SEARCH**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/binarySearch)
 
-**LINKED LIST -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/linkedLists
+[**INTERVALS**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/intervals)
 
-**STACKS -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/stack
+[**LINKED LIST**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/linkedLists)
 
-**TREES -** https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/trees
+[**STACKS**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/stack)
+
+[**TREES**](https://github.com/maxwelllokshin1/leetcode/tree/main/easyPromts/trees)
 
 # MEDIUM PROMPTS
-**MATH -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Math
 
-**TWO POINTERS -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Two%20Pointers
+[**MATH**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Math)
 
-**ARRAYS AND HASHING -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/arraysAndHashing
+[**TWO POINTERS**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/Two%20Pointers)
 
-**BINARY SEARCH -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/binarySearch
+[**ARRAYS AND HASHING**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/arraysAndHashing)
 
-**LINKED LIST -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/linkedLists
+[**BINARY SEARCH**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/binarySearch)
 
-**MATRIX -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/matrix
+[**LINKED LIST**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/linkedLists)
 
-**Stacks -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/stacks
+[**MATRIX**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/matrix)
 
-**TRIES -** https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/trie
+[**Stacks**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/stacks)
+
+[**TRIES**](https://github.com/maxwelllokshin1/leetcode/tree/main/mediumPrompts/trie)
